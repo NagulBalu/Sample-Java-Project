@@ -1,0 +1,53 @@
+package com.sel;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class SeleniumPro {
+
+
+	public static void main(String[] args) throws InterruptedException, AWTException, IOException {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Home\\eclipse-workspace\\SeleniumProject\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.getTitle();
+		driver.manage().window().maximize();
+		WebElement user = driver.findElement(By.id("email"));
+		user.sendKeys("Nagul");
+		Thread.sleep(3000);
+		
+		Actions emp = new Actions(driver);
+		emp.doubleClick(user).contextClick().build().perform();
+		Robot map= new Robot();
+		for(int i=0; i<2;i++) {
+		map.keyPress(KeyEvent.VK_DOWN);
+		map.keyRelease(KeyEvent.VK_DOWN);
+		}
+		map.keyPress(KeyEvent.VK_ENTER);
+		map.keyRelease(KeyEvent.VK_ENTER);
+		map.keyPress(KeyEvent.VK_TAB);
+		map.keyRelease(KeyEvent.VK_TAB);
+		map.keyPress(KeyEvent.VK_CONTROL);
+		map.keyPress(KeyEvent.VK_V);
+		map.keyRelease(KeyEvent.VK_CONTROL);
+		map.keyRelease(KeyEvent.VK_V);
+		
+		TakesScreenshot tk = (TakesScreenshot) driver;
+		File source = tk.getScreenshotAs(OutputType.FILE);
+		File  target = new File("C:\\Users\\Home\\eclipse-workspace\\SeleniumProject\\Target\\fb.png");
+		FileUtils.copyFile(source, target);
+		
+		}
+	}

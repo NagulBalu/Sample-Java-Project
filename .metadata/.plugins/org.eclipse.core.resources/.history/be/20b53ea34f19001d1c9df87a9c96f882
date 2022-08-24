@@ -1,0 +1,44 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public  class IPhone   {
+	
+ 	
+	public static void main (String[] args) {
+		Map<Integer, String> y = new HashMap();
+		y.put(1,"nagul");
+		y.put(2,"balu");
+		y.put(3,"kumar");
+		y.put(4,"mani");
+		y.put(5,"nagul");
+		System.out.println(y);
+		boolean s = y.containsKey(10);
+		System.out.println(s);
+		boolean m = y.containsValue("nagul");
+		System.out.println(m);
+		Set<Integer> r= y.keySet();
+		System.out.println(r);
+		Collection<String> a= y.values();
+		System.out.println(a);
+		Set<Entry<Integer,String>> d =y.entrySet();
+		System.out.println(d);
+		for(Entry<Integer,String> j: d) {
+			System.out.println(j);
+		}
+		
+		 
+	
+	}
+}
+
+ 
+	
+	
+

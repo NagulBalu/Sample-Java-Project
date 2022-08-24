@@ -1,0 +1,20 @@
+package com.tcs;
+
+public  class IPhone   {
+	
+ 	
+	public static void main (String[] args) {
+		 
+		String s = new String("Chennai Balu");
+		String[] y = s.split(" ");
+		System.out.println(y[1]+" "+ y[0]);
+		
+			
+		}
+		
+	} 
+
+ 
+	
+	
+

@@ -1,0 +1,28 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public  class IPhone   {
+	
+ 	
+	public static void main (String[] args) {
+		Map<Integer, String> y = new HashMap();
+		y.put(1,"nagul");
+		y.put(2,"balu");
+		y.put(3,"kumar");
+		y.put(4,"mani");
+		y.put(5,"nagul");
+		System.out.println(y);
+		
+		 
+	
+	}
+}
+
+ 
+	
+	
+

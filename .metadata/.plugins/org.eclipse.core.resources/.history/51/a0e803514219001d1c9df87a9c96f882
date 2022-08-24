@@ -1,0 +1,32 @@
+package com.tcs;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public  class IPhone   {
+	
+ 	
+	public static void main (String[] args) {
+		 
+	List emp = new ArrayList();
+	emp.add("Nagul");
+	emp.add('a');
+	emp.add(99.6);
+	emp.add(true);
+	emp.add(200);
+	Object n = emp.get(2);
+	System.out.println(n);
+	
+	
+	
+		
+		
+			
+		}
+		
+	} 
+
+ 
+	
+	
+

@@ -1,0 +1,42 @@
+package com.sel;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class SeleniumPro {
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Home\\eclipse-workspace\\SeleniumProject\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		WebElement user = driver.findElement(By.id("email"));
+		user.sendKeys("Nagul");
+		
+		Actions emp = new Actions(driver);
+		emp.doubleClick(user).contextClick(user).build().perform();
+		Robot mep = new Robot();
+		for(int i = 0; i<2; i++) {
+		mep.keyPress(KeyEvent.VK_DOWN);
+		mep.keyRelease(KeyEvent.VK_DOWN);
+		}
+		mep.keyPress(KeyEvent.VK_ENTER);
+		mep.keyRelease(KeyEvent.VK_ENTER);
+		mep.keyPress(KeyEvent.VK_TAB);
+		mep.keyRelease(KeyEvent.VK_TAB);
+		mep.keyPress(KeyEvent.VK_CONTROL);
+		mep.keyPress(KeyEvent.VK_V);
+		mep.keyRelease(KeyEvent.VK_CONTROL);
+		mep.keyRelease(KeyEvent.VK_V);
+		
+		
+	}
+	
+}
